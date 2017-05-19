@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <!-- UserBird business object -->
+   <bean id="userBirdBo" class="com.birdcall.userbird.UserBirdBo" >
+   		<property name="userBirdDao" ref="userBirdDao" />
+   </bean>
+
+   <!-- UserBird Data Access Object -->
+   <bean id="userBirdDao" class="com.birdcall.userbird.UserBirdDao" >
+   		<property name="sessionFactory" ref="sessionFactory"></property>
+   </bean>
+
+</beans>

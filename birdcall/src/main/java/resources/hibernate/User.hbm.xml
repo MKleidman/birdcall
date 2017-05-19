@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.birdcall.user.User" table="user" catalog="birdcall">
+        <id name="userId" column="id" type="java.lang.Long">
+            <generator class="sequence" />
+        </id>
+        <property name="userEmail" type="string">
+            <column name="email" length="255" not-null="true" unique="true" />
+        </property>
+        <property name="userPassword" type="string">
+            <column name="password" length="128" not-null="true" unique="false" />
+        </property>
+        <property name="userCurrentZip" type="string">
+            <column name="current_zip" length="20" not-null="true" unique="false" />
+        </property>
+    </class>
+</hibernate-mapping>
